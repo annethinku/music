@@ -1,0 +1,28 @@
+.head-1 {
+  background: #00C957;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  color: white;
+  font-size: 0.3rem;
+  letter-spacing: 0.05rem;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+}
+
+.h-r-icon {
+  width: 0.5rem;
+  position: absolute;
+  right: 0.1rem;
+  top: 0;
+}
+
+.h-r-icon image {
+  width: 100%;
+}
+.leftJ{
+  position: absolute;
+  left: 2%;
+  top: 2px;
+  font-size: 0.4rem;
+}
