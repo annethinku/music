@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>COOL MUSIC</title>
+    <link rel="stylesheet" href="static/css/header.css"/>
+    <style type="text/css">
+      body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,figure,figcaption{
+        font-family: "微软雅黑","Microsoft YaHei","\u9ed1\u4f53","黑体","SimHei";
+        margin:0;padding:0;
+      }
+      /*strong{font-weight: normal;}*/
+      img{border: none;vertical-align: middle;max-width: 100%;}
+      html { height: 100%; width: 100%; outline: 0; -webkit-text-size-adjust:none;}
+      input{outline: none;}
+      input[type=radio]{-webkit-appearance: radio;} input[type=checkbox]{-webkit-appearance: checkbox;}
+      a{text-decoration: none;color: #444444;}
+      ul{list-style-type: none;margin: 0;padding: 0;}
+      *{-webkit-tap-highlight-color: transparent; -webkit-appearance: none;}
+      .clearfix:after{content:"";display:block;clear:both;overflow:hidden;visibility:visible;width:0;height:0;}
+      .fl{float: left;}
+      .fr{float: right;}
+      .tm{text-align: center;}
+      .tl{text-align: left;}
+      .tr{text-align: right;}
+      .inm{display: inline-block;vertical-align: middle;}
+      .int{display: inline-block;vertical-align: top;}
+      .inb{display: inline-block;vertical-align: bottom;}
+      .tb{display: table-cell;width: 50%;}
+      .relative{position: relative;}
+      .ani{position: absolute}
+      /* 经典版 */
+      .clearfixd:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+      }
+      .flex-container {
+        display: -webkit-flex; /* Safari */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .flex-container-center {
+        display: -webkit-flex; /* Safari */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      .flex-container-left {
+        display: -webkit-flex; /* Safari */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .ellipsis {text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+      .ellipsis-2{
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        word-break: break-all;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+      .ellipsis-3{
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        word-break: break-all;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+      .ellipsis-4{
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        word-break: break-all;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+      }
+      .ellipsis-5{
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        word-break: break-all;
+        -webkit-line-clamp: 5;
+        overflow: hidden;
+      }
+      .ellipsis-6{
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        word-break: break-all;
+        -webkit-line-clamp: 6;
+        overflow: hidden;
+      }
+
+      html,body{
+        /*height: 100%;*/
+      }
+      body{
+        overflow:auto;/* winphone8和android4+ */
+        -webkit-overflow-scrolling: touch; /* ios5+ */
+      }
+      /*a:link,a:active,a:focus{color: #444;}*/
+      .flexbox{
+        display: flex;
+        display: -webkit-flex;
+      }
+      button{
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script type="text/javascript">
+
+    (function(designWidth, maxWidth) {
+      var doc = document,
+        win = window,
+        docEl = doc.documentElement,
+        remStyle = document.createElement("style"),
+        tid;
+      //浏览器竖屏与横屏转换的BUG。
+      function refreshRem() {
+        var width = docEl.getBoundingClientRect().width;
+        maxWidth = maxWidth || 540;
+        width>maxWidth && (width=maxWidth);
+        var rem = width * 100 / designWidth;
+        remStyle.innerHTML = 'html{font-size:' + rem + 'px;}';
+      }
+
+      if (docEl.firstElementChild) {
+        docEl.firstElementChild.appendChild(remStyle);
+      } else {
+        var wrap = doc.createElement("div");
+        wrap.appendChild(remStyle);
+        doc.write(wrap.innerHTML);
+        wrap = null;
+      }
+      //要等 wiewport 设置好后才能执行 refreshRem，不然 refreshRem 会执行2次；
+      refreshRem();
+
+      win.addEventListener("resize", function() {
+        clearTimeout(tid); //防止执行两次
+        tid = setTimeout(refreshRem, 300);
+      }, false);
+
+      win.addEventListener("pageshow", function(e) {
+        if (e.persisted) { // 浏览器后退的时候重新计算
+          clearTimeout(tid);
+          tid = setTimeout(refreshRem, 300);
+        }
+      }, false);
+
+      if (doc.readyState === "complete") {
+        doc.body.style.fontSize = "16px";
+      } else {
+        doc.addEventListener("DOMContentLoaded", function(e) {
+          doc.body.style.fontSize = "16px";
+        }, false);
+      }
+    })(750, 750);
+
+
+  </script>
+</html>
