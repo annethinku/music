@@ -53,7 +53,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .common-title {
   font-size: 0.28rem;
   font-weight: bold;

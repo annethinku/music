@@ -89,7 +89,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .logo {
   width: 2rem;
   height: 2rem;

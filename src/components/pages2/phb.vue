@@ -70,7 +70,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .phb-list ul li {
   display: flex;
   display: -webkit-flex;

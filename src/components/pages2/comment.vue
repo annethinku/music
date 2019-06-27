@@ -121,7 +121,7 @@ function timestampToTime(timestamp) {
   return Y + M + D;
 }
 </script>
-<style>
+<style scoped>
 .comment-top {
   margin: 0.24rem;
   align-items: center;

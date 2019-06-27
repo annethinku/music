@@ -65,8 +65,8 @@ export default {
     // 获取歌单列表数据
     that
       .$axios({
-        url:
-          "http://120.78.128.49:3000/recommend/songs"
+        url: "http://120.78.128.49:3000/recommend/songs",
+        withCredentials: true //关键
       })
       .then(res => {
         let arr = [];
@@ -77,7 +77,8 @@ export default {
         });
         sessionStorage.setItem("listid", that.$route.query.id);
         sessionStorage.setItem("idArr", JSON.stringify(arr));
-      }).catch(error=>{
+      })
+      .catch(error => {
         Toast.fail(error.response.data.msg);
       });
   }

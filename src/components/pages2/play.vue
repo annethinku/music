@@ -425,7 +425,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @font-face {
   font-family: "my-icon";
   src: url("./iconfont.ttf") format("truetype");
